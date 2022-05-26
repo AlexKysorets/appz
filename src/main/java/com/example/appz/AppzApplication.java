@@ -10,6 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 import java.lang.module.Configuration;
 import java.util.List;
@@ -20,10 +21,6 @@ public class AppzApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AppzApplication.class, args);
-
-        System.out.println(".......Hibernate Get Example.......\n");
-
-        HibernateUtil.displayTest();
     }
 
 }

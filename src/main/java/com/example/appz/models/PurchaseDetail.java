@@ -12,6 +12,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 public class PurchaseDetail {
+//    private final int price = 100;
+//    private final String paymentSystem = "PayPal";
+
     @Id
     private int id;
     @OneToOne(cascade = CascadeType.ALL)

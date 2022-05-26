@@ -26,6 +26,18 @@ public class UserController {
         return ResponseEntity.ok(userService.getById(id));
     }
 
+    @GetMapping("/{email}")
+    public ResponseEntity<Optional<User>> getByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(userService.getByEmail(email));
+    }
+
+    @GetMapping("/role")
+    public ResponseEntity<List<User>> getByRole(@RequestParam String role,
+                                                @RequestParam(required = false, defaultValue = "10") Integer size,
+                                                @RequestParam(required = false, defaultValue = "0") Integer page) {
+        return ResponseEntity.ok(userService.getByRole(role, page, size));
+    }
+
     @PostMapping("/create")
     public ResponseEntity<User> create(@RequestBody User user) {
         return ResponseEntity.ok(userService.save(user));

@@ -27,6 +27,13 @@ public class SubscriptionController {
         return ResponseEntity.ok(subscriptionService.getById(id));
     }
 
+    @GetMapping("/type")
+    public ResponseEntity<List<Subscription>> getByType(@RequestParam String type,
+                                                        @RequestParam(required = false, defaultValue = "10") Integer size,
+                                                        @RequestParam(required = false, defaultValue = "0") Integer page) {
+        return ResponseEntity.ok(subscriptionService.getByType(type, page, size));
+    }
+
     @PostMapping("/create")
     public ResponseEntity<Subscription> create(@RequestBody Subscription subscription) {
         return ResponseEntity.ok(subscriptionService.save(subscription));

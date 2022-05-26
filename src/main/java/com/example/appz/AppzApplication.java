@@ -21,14 +21,6 @@ public class AppzApplication {
     public static void main(String[] args) {
         SpringApplication.run(AppzApplication.class, args);
 
-//        SessionFactory sessionFactory;
-//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
-//        try {
-//            sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
-//        } catch (Exception e) {
-//            // handle the exception
-//        }
-
         System.out.println(".......Hibernate Get Example.......\n");
 
         HibernateUtil.displayTest();

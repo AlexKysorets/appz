@@ -29,17 +29,8 @@ public class HibernateUtil {
 
     public static void displayTest() {
         User user;
-//        session = sessionFactory.openSession();
-//        session.beginTransaction();
         session = buildSessionFactory().openSession();
         try {
-
-//            user = session.get(User.class, 1);
-//            if(user != null) {
-//                System.out.println("\nUser Record?= " + user);
-//            } else {
-//                System.out.println(user);
-//            }
             List<PurchaseDetail> purchaseDetails = session.createQuery("from PurchaseDetail ", PurchaseDetail.class).list();
             purchaseDetails.forEach(System.out::println);
         } catch(Exception sqlException) {

@@ -26,6 +26,12 @@ public class SubscriptionService {
         return subscriptionRepository.findById(id);
     }
 
+    public List<Subscription> getByType(String type, int page, int size) {
+        Pageable paging = PageRequest.of(page, size);
+        var subscriptions = subscriptionRepository.getByType(type, paging);
+        return subscriptions.toList();
+    }
+
     public Subscription save(Subscription subscription) {
         return subscriptionRepository.save(subscription);
     }

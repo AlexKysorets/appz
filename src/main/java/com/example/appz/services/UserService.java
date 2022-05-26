@@ -26,6 +26,16 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    public Optional<User> getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public List<User> getByRole(String role, int page, int size) {
+        Pageable paging = PageRequest.of(page, size);
+        var users = userRepository.findByRole(role, paging);
+        return users.toList();
+    }
+
     public User save(User user) {
         return userRepository.save(user);
     }

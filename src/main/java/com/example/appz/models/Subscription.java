@@ -19,12 +19,8 @@ public class Subscription {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-//    @Column(name = "user_id")
-//    private int userId;
     @Column(name = "started_at")
     private String startedAt;
     @Column(name = "ended_at")
     private String endedAt;
-//    @OneToOne(mappedBy = "PurchaseDetail")
-//    private PurchaseDetail purchaseDetail;
 }

@@ -17,8 +17,6 @@ public class PurchaseDetail {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "subscription_id", referencedColumnName = "id")
     private Subscription subscription;
-//    @Column(name = "subscription_id")
-//    private int subscriptionId;
     @Column(name = "status")
     private String status;
 }
